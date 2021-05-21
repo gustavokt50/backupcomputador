@@ -1,0 +1,90 @@
+<<<<<<< HEAD
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Entrar</ion-button>
+        <a [routerLink]="['/forgot-password']" class="small-text">Esqueceu a senha?</a>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+=======
+<div class="ion-padding">
+
+  <div class="centered">
+
+    <div class="logo">
+      <!--   caro coitado q dará manutenção, me perdoa por favor, mas eu estava com preguiça! :3 -->
+      <!--   mas me diga como é o futuro? você está bem? quer um abraço man? tô vendo você sofrendo ai-->
+      <!--   caralho,se lembra da época do tal de corona? bons tempos vei...-->
+      <!--   você ja paga imposto por respirar?-->
+      <!--   ainda existem terraplanistas?-->
+      <!--    ps: if everything stop working without a reasonable logic, it's all Gustavo's fault!-->
+  <!-- hue  hue  hue hue hue  hue hue  hue  hue hue  hue  hue hue  hue  hue hue  hue  hue hue  hue  hue-->
+      <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+  
+    </div>
+
+    <form novalidate>
+
+      <ion-list>
+
+        <ion-item>
+          
+          <ion-icon name="person-outline" slot= "start"></ion-icon>
+          <ion-input [(ngModel)]="username" name= "username" type= "email" placeholder= "Usuário"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-icon name= "lock-closed-outline" slot="start"></ion-icon>
+          <ion-input [(ngModel)]= "password" name= "password" type= "password" placeholder= "Senha">
+          </ion-input>
+        </ion-item>
+
+        <ion-button fill= "outline" expand="block" (click)="logar()" style="margin-top: 15px">Entrar</ion-button>
+
+      </ion-list>
+
+      <ion-grid item-content>
+        <ion-row>
+
+          <ion-col col-12 style="text-align: center">
+            
+            <ion-checkbox name="lembrarSenha" color="success" checked="false" [(ngModel)]="lembrarSenha"></ion-checkbox>
+
+            <ion-label>
+              Lembrar a minha senha?
+            </ion-label>
+
+          </ion-col>
+
+        </ion-row>
+
+      </ion-grid>
+
+    </form>
+
+  </div>
+
+</div>
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387

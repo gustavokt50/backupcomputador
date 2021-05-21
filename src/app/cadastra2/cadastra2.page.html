@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de sepultados</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form class="container" [formGroup]="sepultadoForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input
+              [class.invalid]="!sepultadoForm.controls.nome.valid &&(sepultadoForm.controls.nome.dirty || submitAttempt)"
+              type="text" maxLength="200" required formControlName="nome" [(ngModel)]="sepultado.nome"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="sepultadoForm.controls.nome.hasError('required') && sepultadoForm.controls.nome.touched">
+            <p style="color:red">*Campo Nome é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Causa Óbito</ion-label>
+            <ion-select required formControlName="causa_obito_fk" [(ngModel)]="sepultado.causa_obito_fk">
+              <ion-select-option *ngFor="let atributo of atributos" [value]="atributo.codigo_atributo"
+                cancelText="Cancelar" doneText="Ok">
+                {{atributo.descricao_atributo}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item
+            *ngIf="sepultadoForm.controls.causa_obito_fk.hasError('required') && sepultadoForm.controls.causa_obito_fk.touched">
+            <p style="color:red">*Campo Causa Óbito é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Data de Nascimento</ion-label>
+            <br>
+            <ion-input
+              [class.invalid]="!sepultadoForm.controls.data_nascimento.valid &&(sepultadoForm.controls.data_nascimento.dirty || submitAttempt)"
+              type="date" maxLength="10" required formControlName="data_nascimento"
+              [(ngModel)]="sepultado.data_nascimento">
+            </ion-input>
+          </ion-item>
+          <ion-item
+            *ngIf="sepultadoForm.controls.data_nascimento.hasError('required') && sepultadoForm.controls.data_nascimento.touched">
+            <p style="color:red">*Campo data_nascimento é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Data do Obito</ion-label>
+            <br>
+            <ion-input
+              [class.invalid]="!sepultadoForm.controls.data_obito.valid &&(sepultadoForm.controls.data_obito.dirty || submitAttempt)"
+              type="date" maxLength="10" required formControlName="data_obito" [(ngModel)]="sepultado.data_obito">
+            </ion-input>
+          </ion-item>
+          <ion-item
+            *ngIf="sepultadoForm.controls.data_obito.hasError('required') && sepultadoForm.controls.data_obito.touched">
+            <p style="color:red">*Campo Data do Obito é obrigatório.</p>
+          </ion-item>
+          <ion-item
+            *ngIf="sepultadoForm.controls.data_obito.errors?.dataInvalida && sepultadoForm.controls.data_obito.touched">
+            <p style="color:red">*Campo Data do Obito não pode ser anterior à Data de Nascimento</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Data de Sepultamento</ion-label>
+            <br>
+            <ion-input
+              [class.invalid]="!sepultadoForm.controls.data_sepultamento.valid &&(sepultadoForm.controls.data_sepultamento.dirty || submitAttempt)"
+              type="date" maxLength="10" required formControlName="data_sepultamento"
+              [(ngModel)]="sepultado.data_sepultamento"></ion-input>
+          </ion-item>
+          <ion-item
+            *ngIf="sepultadoForm.controls.data_sepultamento.hasError('required') && sepultadoForm.controls.data_sepultamento.touched">
+            <p style="color:red">*Campo Data de Sepultamento é obrigatório.</p>
+          </ion-item>
+          <ion-item
+            *ngIf="sepultadoForm.controls.data_sepultamento.errors?.dataInvalida && sepultadoForm.controls.data_sepultamento.touched">
+            <p style="color:red">*Campo Data do Sepultamento não pode ser anterior à Data do Óbito</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button expand="block" fill="outline" (click)="save()">Cadastrar</ion-button>
+    <ion-button expand="block" fill="outline" (click)="deletar()">Remover</ion-button>
+  </form>
+</ion-content>

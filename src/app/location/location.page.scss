@@ -1,0 +1,37 @@
+page-home {
+  .scroll {
+    height: 100%;
+  }
+
+  
+  #map {
+    position: relative;
+    left: 720px;
+    top: 0px;
+    bottom: auto;
+    width: 50%;
+    height: 100%;
+  }
+  
+
+  
+  #address {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+ion-title{
+  font-family: 'SFUIDisplay', sans-serif;
+  src: url('/src/assets/fonts/sf-ui-display-black.ttf');
+}
+ion-item{
+  font-family: 'SFUIDisplay', sans-serif;
+  src: url('/src/assets/fonts/sf-ui-display-thin.ttf');
+}
+ion-label{
+  font-family: 'SFUIDisplay', sans-serif;
+  src: url('/src/assets/fonts/sf-ui-display-black.ttf');
+}
+

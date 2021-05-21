@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title size="default">Consulta de Cadastrados</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <div *ngFor="let consulta of getcad">
+      <ion-row>
+        <ion-col>
+          <ion-item position="floating">
+            <ion-title> Nome: </ion-title>
+            <ion-icon [name]="consulta.nome" slot="start"></ion-icon>
+            {{consulta.nome}}
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+
+        <ion-col>
+          <ion-item >
+            <ion-label > Endereço: </ion-label>
+            <ion-icon [name]="consulta.endereco" slot="start"></ion-icon>
+            {{consulta.endereco}}
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item >
+            <ion-label > Município: </ion-label>
+            <ion-icon [name]="consulta.municipio_fk" slot="start"></ion-icon>
+            {{consulta.municipio_fk}}
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <br>
+
+    </div>
+  </ion-grid>
+</ion-content>

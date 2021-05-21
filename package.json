@@ -1,0 +1,186 @@
+{
+  "name": "projeto",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "https://ionicframework.com/",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+<<<<<<< HEAD
+    "@angular/common": "^11.2.12",
+    "@angular/core": "^11.2.12",
+    "@angular/forms": "^11.2.12",
+    "@angular/platform-browser": "^11.2.12",
+    "@angular/platform-browser-dynamic": "^11.2.12",
+    "@angular/router": "^11.2.12",
+=======
+    "@angular/animations": "^11.2.13",
+    "@angular/common": "~11.2.13",
+    "@angular/core": "~11.2.13",
+    "@angular/forms": "~11.2.13",
+    "@angular/material": "^11.2.12",
+    "@angular/platform-browser": "~11.2.13",
+    "@angular/platform-browser-dynamic": "~11.2.13",
+    "@angular/router": "~11.2.13",
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387
+    "@capacitor/android": "^2.4.7",
+    "@capacitor/core": "2.4.7",
+    "@ionic-native/camera": "^5.32.1",
+    "@ionic-native/core": "^5.32.1",
+    "@ionic-native/geolocation": "^5.32.1",
+    "@ionic-native/google-maps": "^5.5.0",
+    "@ionic-native/native-geocoder": "^5.32.1",
+<<<<<<< HEAD
+    "@ionic/angular": "^5.6.6",
+    "@ionic/storage": "^3.0.4",
+    "@ionic/storage-angular": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cordova": "^10.0.0",
+    "cordova-androidx-build": "^1.0.4",
+    "cordova-browser": "6.0.0",
+    "cordova-plugin-camera": "^5.0.1",
+=======
+    "@ionic-native/splash-screen": "^5.32.1",
+    "@ionic-native/status-bar": "^5.32.1",
+    "@ionic/angular": "^5.6.6",
+    "@ionic/core": "^5.6.6",
+    "@ionic/storage": "^3.0.4",
+    "@ionic/storage-angular": "^3.0.6",
+    "@material/select": "^11.0.0",
+    "br-mask": "0.0.10",
+    "brmasker-ionic": "^1.0.12",
+    "cordova": "^10.0.0",
+    "cordova-browser": "6.0.0",
+    "cordova-ios": "5.1.1",
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387
+    "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git",
+    "cordova-res": "^0.15.3",
+    "cordova-sqlite-storage": "^6.0.0",
+<<<<<<< HEAD
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "native-run": "^1.3.0",
+    "package.json": "^2.0.1",
+=======
+    "form-group": "^3.0.8",
+    "jwt-decode": "^3.1.2",
+    "ng-form-group": "^1.4.2",
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "web": "0.0.2",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+<<<<<<< HEAD
+    "@angular-devkit/build-angular": "^0.1102.11",
+    "@angular/cli": "11.2.11",
+    "@angular/compiler": "^11.2.12",
+    "@angular/compiler-cli": "^11.2.12",
+    "@angular/language-service": "^11.2.12",
+    "@capacitor/cli": "^2.4.7",
+    "@ionic/angular-toolkit": "^3.1.1",
+    "@ionic/lab": "3.2.10",
+    "@types/jasmine": "^3.6.10",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.20.11",
+    "codelyzer": "^6.0.2",
+    "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-geolocation": "^4.1.0",
+    "cordova-plugin-googlemaps": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps.git#multiple_maps",
+=======
+    "@angular-devkit/build-angular": "^0.1102.12",
+    "@angular/cli": "~11.2.12",
+    "@angular/compiler": "~11.2.13",
+    "@angular/compiler-cli": "~11.2.13",
+    "@angular/language-service": "~11.2.13",
+    "@capacitor/cli": "2.4.7",
+    "@ionic/angular-toolkit": "^3.1.1",
+    "@types/jasmine": "^3.6.11",
+    "@types/jasminewd2": "^2.0.9",
+    "@types/node": "^12.20.12",
+    "android": "^0.0.8",
+    "codelyzer": "^6.0.2",
+    "cordova-android": "^9.1.0",
+    "cordova-androidx-build": "^1.0.4",
+    "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-geolocation": "^4.1.0",
+    "cordova-plugin-googlemaps": "github:mapsplugin/cordova-plugin-googlemaps#multiple_maps",
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387
+    "cordova-plugin-ionic-keyboard": "^2.2.0",
+    "cordova-plugin-ionic-webview": "^4.2.1",
+    "cordova-plugin-splashscreen": "^5.0.4",
+    "cordova-plugin-statusbar": "^2.4.3",
+    "cordova-plugin-whitelist": "^1.3.4",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "^6.3.2",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~4.0.0",
+<<<<<<< HEAD
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "nodemon": "^2.0.7",
+=======
+    "karma-jasmine-html-reporter": "^1.6.0",
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-geolocation": {
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-googlemaps": {
+        "API_KEY_FOR_ANDROID": "...",
+        "API_KEY_FOR_IOS": "..."
+      },
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-file": {}
+    },
+    "platforms": [
+<<<<<<< HEAD
+      "browser"
+=======
+      "browser",
+      "ios",
+      "android"
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387
+    ]
+  },
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deividyA/Ionic-App-Cemiterio.git"
+  },
+<<<<<<< HEAD
+  "keywords": [],
+=======
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deividyA/Ionic-App-Cemiterio/issues"
+  }
+}

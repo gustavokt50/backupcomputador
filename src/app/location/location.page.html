@@ -1,0 +1,156 @@
+<ion-app>
+  <ion-content>
+<<<<<<< HEAD
+    <div #map id="map" style="width :auto ; height: 65%;"></div>
+    <ion-item>
+      <ion-label position="center"></ion-label>
+      <ion-input type="text" name="nome" placeholder="Nome" maxlength="50" (input)="setNome($event.target.value)">
+      </ion-input>
+      <ion-input type="text" name="morte" placeholder="Morte" maxlength="50" (input)="setMorte($event.target.value)">
+      </ion-input>
+      <ion-input type="text" name="cidade" placeholder="Cidade" maxlength="50" (input)="setCidade($event.target.value)">
+      </ion-input>
+      <ion-input type="text" name="estado" placeholder="Estado" maxlength="50" (input)="setEstado($event.target.value)">
+      </ion-input>
+
+
+      <ion-button (click)="takeSnap()">
+        Foto
+      </ion-button>
+
+      <img [src]="capturedSnapURL" />
+
+      <ion-button color="primary" (click)="registrar()">Registrar</ion-button>
+    </ion-item>
+
+    <ion-button (click)="getUserPosition()" expand="block">
+      Get Location
+    </ion-button>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Location Coordinates</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>
+          Latitue
+        </ion-label>
+        <ion-badge color="danger" slot="end">{{latitude}}</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Longitude
+        </ion-label>
+        <ion-badge color="danger" slot="end">{{longitude}}</ion-badge>
+      </ion-item>
+    </ion-list>
+=======
+    <form class="container" [formGroup]="cemiterioForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input
+              [class.invalid]="!cemiterioForm.controls.nome.valid &&(cemiterioForm.controls.nome.dirty || submitAttempt)"
+              type="text" maxLength="10" required formControlName="nome" [(ngModel)]="cemiterio.nome"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="cemiterioForm.controls.nome.hasError('required') && cemiterioForm.controls.nome.touched">
+            <p style="color:red">*Campo Nome é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">CEP</ion-label>
+            <ion-input
+              [class.invalid]="!cemiterioForm.controls.cep.valid &&(cemiterioForm.controls.cep.dirty || submitAttempt)"
+              type="text" maxLength="10" required formControlName="cep" [(ngModel)]="cemiterio.cep"  [brmasker]="{mask:'00.000-000', len:10}"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="cemiterioForm.controls.cep.hasError('required') && cemiterioForm.controls.cep.touched">
+            <p style="color:red">*Campo CEP é obrigatório.</p>
+          </ion-item>
+          <ion-item
+            *ngIf="!cemiterioForm.controls.cep.valid && !cemiterioForm.controls.cep.pending && (cemiterioForm.controls.cep.dirty || submitAttempt)">
+            <p style="color:red">*Formato inválido<br> Ex.:99.999-999.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Municipio</ion-label>
+            <ion-input clearInput type="text" [(ngModel)]="cemiterio.municipio_fk" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+          <ion-label position="floating">Endereço</ion-label>
+            <ion-input
+              [class.invalid]="!cemiterioForm.controls.endereco.valid &&(cemiterioForm.controls.endereco.dirty || submitAttempt)"
+              type="text" maxLength="10" required formControlName="endereco" [(ngModel)]="cemiterio.endereco"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="cemiterioForm.controls.endereco.hasError('required') && cemiterioForm.controls.endereco.touched">
+            <p style="color:red">*Campo Endereço é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Número</ion-label>
+            <ion-input
+              [class.invalid]="!cemiterioForm.controls.numero.valid &&(cemiterioForm.controls.numero.dirty || submitAttempt)"
+              type="text" maxLength="10" required formControlName="numero" [(ngModel)]="cemiterio.numero"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="cemiterioForm.controls.numero.hasError('required') && cemiterioForm.controls.numero.touched">
+            <p style="color:red">*Campo Número é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Complemento</ion-label>
+            <ion-input clearInput type="text" [(ngModel)]="cemiterio.complemento" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item> 
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Bairro</ion-label>
+            <ion-input clearInput type="text" [(ngModel)]="cemiterio.bairro" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Linha</ion-label>
+            <ion-input clearInput type="text" [(ngModel)]="cemiterio.linha_fk" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Distrito</ion-label>
+            <ion-input clearInput type="text" [(ngModel)]="cemiterio.distrito_fk" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Latitude</ion-label>
+            <ion-input clearInput type="number" [(ngModel)]="cemiterio.latitude" value="{{latitude}}" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Longitude</ion-label>
+            <ion-input clearInput type="number" [(ngModel)]="cemiterio.longitude" value="{{longitude}}" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div #map id="map" style="width :auto ; height: 36%;"></div>
+    <ion-button expand="block" fill="outline" (click)="save()">Cadastrar</ion-button>
+    <ion-button expand="block" fill="outline" (click)="deletar()">remover</ion-button>
+  </form>
+>>>>>>> bd1b37d83bfdb30f4cda256e1370300e66c96387
+  </ion-content>
+</ion-app>

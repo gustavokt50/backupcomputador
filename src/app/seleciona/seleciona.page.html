@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="container" [formGroup]="cemiterioForm">
+    <ion-item>
+      <ion-label>Selecione o Cemitério</ion-label>
+      <ion-select required formControlName="nome">
+        <ion-select-option *ngFor="let cemiterio of cemiterios" [value]="cemiterio.id" cancelText="Cancelar"
+          doneText="Ok">
+          {{cemiterio.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" fill="outline" (click)="prox()">Próximo</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de Jazigos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="container" [formGroup]="jazigoForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Responsável</ion-label>
+            <ion-select required formControlName="complemento_agente_fk" [(ngModel)]="jazigo.complemento_agente_fk">
+              <ion-select-option *ngFor="let complemento of complementos" [value]="complemento.agente_fk"
+                cancelText="Cancelar" doneText="Ok">
+                {{complemento.nome_razao_social}}  
+              </ion-select-option>
+              <ion-select-option value="sim" cancelText="Cancelar" doneText="Ok">
+                Sim
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item
+            *ngIf="jazigoForm.controls.complemento_agente_fk.hasError('required') && jazigoForm.controls.complemento_agente_fk.touched">
+            <p style="color:red">*Campo Responsável é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Tipo da Carneira</ion-label>
+            <ion-select required formControlName="tipo_carneira" [(ngModel)]="jazigo.tipo_carneira">
+              <ion-select-option *ngFor="let tipo of tipo_carneira" [value]="tipo.id" cancelText="Cancelar"
+                doneText="Ok">
+                {{tipo.nome}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item
+            *ngIf="jazigoForm.controls.tipo_carneira.hasError('required') && jazigoForm.controls.tipo_carneira.touched">
+            <p style="color:red">*Campo Tipo Da Carneira é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Quadra</ion-label>
+            <ion-input
+              [class.invalid]="!jazigoForm.controls.quadra.valid &&(jazigoForm.controls.quadra.dirty || submitAttempt)"
+              type="text" maxLength="250" required formControlName="quadra" [(ngModel)]="jazigo.quadra"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="jazigoForm.controls.quadra.hasError('required') && jazigoForm.controls.quadra.touched">
+            <p style="color:red">*Campo Quadra é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Fila</ion-label>
+            <ion-input
+              [class.invalid]="!jazigoForm.controls.fila.valid &&(jazigoForm.controls.fila.dirty || submitAttempt)"
+              type="text" maxLength="40" required formControlName="fila" [(ngModel)]="jazigo.fila"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="jazigoForm.controls.fila.hasError('required') && jazigoForm.controls.fila.touched">
+            <p style="color:red">*Campo Fila é obrigatório.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Lote/Carneira</ion-label>
+          <ion-input
+            [class.invalid]="!jazigoForm.controls.lote.valid &&(jazigoForm.controls.lote.dirty || submitAttempt)"
+            type="text" maxLength="50" required formControlName="lote" [(ngModel)]="jazigo.lote"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="jazigoForm.controls.lote.hasError('required') && jazigoForm.controls.lote.touched">
+          <p style="color:red">*Campo Lote/Carneira é obrigatório.</p>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Lado</ion-label>
+          <ion-select required formControlName="lado" [(ngModel)]="jazigo.lado">
+            <ion-select-option *ngFor="let lado of lados" [value]="lado.id" cancelText="Cancelar" doneText="Ok">
+              {{lado.nome}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Latitude</ion-label>
+            <ion-input clearInput type="number" [(ngModel)]="jazigo.latitude" value="{{latitude}}"
+              [ngModelOptions]="{standalone: true}" disabled="true"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Longitude</ion-label>
+            <ion-input clearInput type="number" [(ngModel)]="jazigo.longitude" value="{{longitude}}"
+              [ngModelOptions]="{standalone: true}" disabled="true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div #map id="map" style="width :auto ; height: 36%;"></div>
+    <ion-button expand="block" fill="outline" (click)="save()">Próximo</ion-button>
+    <ion-button expand="block" fill="outline" (click)="deletar()">Deletar</ion-button>
+  </form>
+</ion-content>
